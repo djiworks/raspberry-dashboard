@@ -26,7 +26,12 @@ Finally, go to the new DASHBOARDNAME directory and run `bundle`.
 That's all !! You can start your dashboard using `dashing start`and visit it from a browser on `http://RPI_IP:3030`.
 RPI_IP should be replaced by the IP your raspberry uses.
 
-## Step 2: Make your widget
+## Step 2: Make your own widgets
+### Server Status
+Based on https://gist.github.com/willjohnson/6313986. Please see modifications [here](https://gist.github.com/djiworks/c18650c662a993fcd1e9323afd87ccc3/revisions)
+
+
+
 
 ## Step 3: Make your Raspberry as a kiosk display
 First install chromium `apt-get install chromium-browser`.
@@ -38,7 +43,7 @@ chromium-browser --kiosk --incognito http://127.0.0.1:3030
 ```
 Finally add execution right running `chmod +x display_dashboard.sh`
 
-Step 4 (optionnal): Use dashboard backend and kiosk as service with pm2
+## Step 4 (optionnal): Use dashboard backend and kiosk as service with pm2
 - Install pm2: `npm install -g pm2`
 - Go to your dashboard directoty (where DASHBOARDNAME is installed) and run:
 
@@ -52,3 +57,5 @@ pm2 will then allow you to monitor the dashboard display and backend separately.
 ## Sources
 - [Dashing.io] (http://dashing.io/)
 - [PM2] (http://pm2.keymetrics.io/docs/usage/cluster-mode/)
+- [Performance dashboard] (https://github.com/Clevero/dashing-performance-monitor)
+- [Server Status] (https://gist.github.com/willjohnson/6313986)
