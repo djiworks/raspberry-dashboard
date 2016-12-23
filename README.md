@@ -37,5 +37,18 @@ export DISPLAY=:0 # To be able to run a GUI software when using the terminal
 chromium-browser --kiosk --incognito http://127.0.0.1:3030
 ```
 Finally add execution right running `chmod +x display_dashboard.sh`
+
+Step 4 (optionnal): Use dashboard backend and kiosk as service with pm2
+- Install pm2: `npm install -g pm2`
+- Go to your dashboard directoty (where DASHBOARDNAME is installed) and run:
+
+`pm2 start dashing --name dashboard-server --interpreter ruby -- start`
+
+- Go where your display_dashboard.sh is and run again:
+
+`pm2 start dashboard.sh --name dashboard-display`
+
+pm2 will then allow you to monitor the dashboard display and backend separately.
 ## Sources
-[Dashing.io] (http://dashing.io/)
+- [Dashing.io] (http://dashing.io/)
+- [PM2] (http://pm2.keymetrics.io/docs/usage/cluster-mode/)
