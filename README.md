@@ -26,5 +26,15 @@ Finally, go to the new DASHBOARDNAME directory and run `bundle`.
 That's all !! You can start your dashboard using `dashing start`and visit it from a browser on `http://RPI_IP:3030`.
 RPI_IP should be replaced by the IP your raspberry uses.
 
+## Step 2: Make your widget
+
+## Step 3: Make your Raspberry as a kiosk display
+First install chromium `apt-get install chromium-browser`
+Then create a script `nano display_dashboard.sh` containing
+```bash
+export DISPLAY=:0 # To be able to run a GUI software when using the terminal
+chromium-browser --kiosk --incognito http://127.0.0.1:3030
+```
+Finally add execution right running `chmod +x display_dashboard.sh`
 ## Sources
 [Dashing.io] (http://dashing.io/)
