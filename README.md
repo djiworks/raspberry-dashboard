@@ -29,7 +29,8 @@ RPI_IP should be replaced by the IP your raspberry uses.
 ## Step 2: Make your widget
 
 ## Step 3: Make your Raspberry as a kiosk display
-First install chromium `apt-get install chromium-browser`
+First install chromium `apt-get install chromium-browser`.
+
 Then create a script `nano display_dashboard.sh` containing
 ```bash
 export DISPLAY=:0 # To be able to run a GUI software when using the terminal
