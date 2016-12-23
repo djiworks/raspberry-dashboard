@@ -26,8 +26,27 @@ Finally, go to the new DASHBOARDNAME directory and run `bundle`.
 That's all !! You can start your dashboard using `dashing start`and visit it from a browser on `http://RPI_IP:3030`.
 RPI_IP should be replaced by the IP your raspberry uses.
 
+If you want to customize or create new dashboard page:
+- Create a my_dashboard.erb file in DASHBOARDNAME/dashboards
+- Write inside:
+```html
+<% content_for :title do %>Raspberry Dashboard<% end %>
+<div class="gridster">
+  <ul>
+    <li data-row="0" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-view="Clock"></div>
+      <i class="fa fa-clock-o icon-background"></i>
+    </li>
+  </ul>
+</div>
+```
+- See it visiting `http://RPI_IP:3030/my_dashboard`
+- Make it as default dashboard (the one displayed on the root url). To do that, simply add this line
+`set :default_dashboard, 'my_dashboard'` in `DASHBOARDNAME/config.ru` after `set :auth_token, 'aToken'`
+
 ## Step 2: Make your own widgets
 ### Server Status
+Tile to display ping or http get request on an url.
 Based on https://gist.github.com/willjohnson/6313986. Please see modifications [here](https://gist.github.com/djiworks/c18650c662a993fcd1e9323afd87ccc3/revisions)
 
 
